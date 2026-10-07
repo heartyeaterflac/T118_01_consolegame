@@ -55,7 +55,7 @@ def show_rules():
     print("Если вы угадаете число - победа.")
     print("Если потратите все 6 попыток не угадав - поражение.")
 
-#
+# Проверка выбора пункта в меню пользователя
 def read_choice(prompt, allowed):
     while True:
         choice = input(prompt)
@@ -69,6 +69,7 @@ def read_choice(prompt, allowed):
 
         print("Некорректный выбор. Попробуйте ещё раз.")
 
+# Менюшка и обработка выбора игрока по типу вызова play_game; show_rule и
 def main():
     choice = ""
 
@@ -77,7 +78,7 @@ def main():
         print("2. Правила")
         print("3. Выход")
 
-        choice = input("Выберите: ")
+        choice = read_choice("Выберите:", ["1", "2", "3"])
 
         if choice == "1":
             play_game()
